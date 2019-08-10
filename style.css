@@ -1,0 +1,38 @@
+.jumbotron {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#schedule-table {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px;
+}
+
+.current-train-schedule {
+    background-color: black;
+    color: white;
+    padding: 20px; 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+}
+
+.add-train {
+    background-color: black;
+    color: white;
+    padding: 20px; 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+#add-train-form {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px;
+}
