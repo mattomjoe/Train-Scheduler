@@ -14,6 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--Javascript-->
     <script src="script.js"></script>
+    <!--Firebase-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <!-- Specific Firebase products we want -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
 </head>
 
 <!-- JUMBOTRON HEADER -->
@@ -35,7 +40,6 @@
         <p>Current Train Schedule</p>
     </div>
     <table class="table">
-            <!--<thead class="thead-dark">-->
             <tr>
                 <th scope="col">Train Name</th>
                 <th scope="col">Destination</th>
@@ -43,7 +47,6 @@
                 <th scope="col">Next Arrival</th>
                 <th scope="col">Minutes Away</th>
             </tr>
-            <!--</thead>-->
             <tbody>
             <tr>
                 <th scope="row">1</th>
@@ -72,6 +75,8 @@
 
     <br>
 
+<!-- ADD TRAIN FOKRM -->
+
 <div class="container" id="add-train-form">
         <div class="add-train">
             <p>Add Train</p>
@@ -79,22 +84,22 @@
         <form>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Train Name</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" id="train-name-input"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Destination</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" id="destination-input"></textarea>
                   </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">First Train Time (HH:mm - military time)</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" id="first-train-time"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Frequency (min)</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" id="frequency-input"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="submit-new-train">Submit</button>
               </form>
 </div>
 
