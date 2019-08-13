@@ -16,14 +16,16 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+  // Variable that provides reference to database
   var dataRef = firebase.database();
 
   // Initial values
   var trainName = "";
   var destination = "";
+  var firstTrainTime = "";
   var frequency = 0;
-  var nextArrival = 0;
-  var minutesAway = 0;
+  // var nextArrival = 0;
+  // var minutesAway = 0;
 
   // Capture Button Click
   $("#submit-new-train").on("click", function(event) {
@@ -31,22 +33,56 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
 
     console.log("you clicked submit!");
 
-    // Store and retrieve most recent data added
-
+    // Captures the data entered by the user in the form
     var trainName = $("#train-name-input").val().trim();
     var destination = $("#destination-input").val().trim();
     var firstTrainTime = $("#first-train-time").val().trim();
     var frequency = $("#frequency-input").val().trim();
 
-    dataRef.ref().push({
+    var newTrain = {
         trainName: trainName,
         destination: destination,
+        firstTrainTime: firstTrainTime,
         frequency: frequency,
-        nextArrival: nextArrival,
-        minutesAway: minutesAway,
+        // nextArrival: nextArrival,
+        // minutesAway: minutesAway,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
-    });
+    };
+
+    dataRef.ref().push(newTrain);
+
+    console.log(newTrain.trainName);
+    console.log(newTrain.destination);
+    console.log(newTrain.firstTrainTime);
+    console.log(newTrain.frequency);
+
+    alert("New train successfully added");
+
+    // Reset/zero-out form fields
+
+    $("#train-name-input").val("");
+    $("#destination-input").val("");
+    $("#first-train-time").val("");
+    $("#frequency-input").val("");
 
   });
+
+  
+  /* database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+    var trainName = childSnapshot.val().trainName;
+    var destination = childSnapshot.val().destination;
+    var firstTrainTime = childSnapshot.val().firstTrainTime;
+    var frequency = childSnapshot.val().frequency;
+
+    console.log(trainName);
+    console.log(destination);
+    console.log(firstTrainTime);
+    console.log(frequency);
+
+
+
+  }); */
 
 });
