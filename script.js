@@ -1,14 +1,16 @@
 $(document).ready(function () { // ALWAYS INCLUDE!!
 
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
+    console.log("Good to here!");
+
+  // Web app's Firebase configuration
+  const firebaseConfig = {
     apiKey: "AIzaSyDLekp5FMh10mfvzpAMwMfakS5XFQ8Tui4",
     authDomain: "mjosephbc2019.firebaseapp.com",
     databaseURL: "https://mjosephbc2019.firebaseio.com",
     projectId: "mjosephbc2019",
-    storageBucket: "",
+    storageBucket: "mjosephbc2019.appspot.com",
     messagingSenderId: "727957928932",
-    appId: "1:727957928932:web:c7b27bc86c0d3da7"
+    appId: "1:727957928932:web:92bf57c5a753e858"
   };
 
   // Initialize Firebase
@@ -27,15 +29,24 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
   $("#submit-new-train").on("click", function(event) {
     event.preventDefault();
 
+    console.log("you clicked submit!");
+
     // Store and retrieve most recent data added
 
-    trainName = $("#train-name-input").val().trim();
-    destination = $("#destination-input").val().trim();
-    frequency = $("#frequency-input").val().trim();
-    nextArrival = 
-    minutesAway = 
+    var trainName = $("#train-name-input").val().trim();
+    var destination = $("#destination-input").val().trim();
+    var firstTrainTime = $("#first-train-time").val().trim();
+    var frequency = $("#frequency-input").val().trim();
 
+    dataRef.ref().push({
+        trainName: trainName,
+        destination: destination,
+        frequency: frequency,
+        nextArrival: nextArrival,
+        minutesAway: minutesAway,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
 
-  })
+  });
 
 });
