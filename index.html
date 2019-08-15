@@ -7,18 +7,18 @@
     <!--Browser style reset-->
     <link rel="stylesheet" type="text/css" href="reset.css"> 
     <!--Bootstrap Library-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!--jQuery Library-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--Javascript-->
-    <script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <!--Firebase-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="http://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <!-- Specific Firebase products we want -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+    <script src="http://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
 </head>
 
 <!-- JUMBOTRON HEADER -->
@@ -39,7 +39,7 @@
     <div class="current-train-schedule">
         <p>Current Train Schedule</p>
     </div>
-    <table class="table">
+    <table class="table" id="train-table">
             <tr>
                 <th scope="col">Train Name</th>
                 <th scope="col">Destination</th>
@@ -48,17 +48,10 @@
                 <th scope="col">Minutes Away</th>
             </tr>
             <tbody>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
             </tbody>
         </table>
         
-        <table class="table">
+       <!-- <table class="table">
         
             <tbody>
             <tr>
@@ -71,7 +64,7 @@
             
             
             </tbody>
-        </table>
+        </table> -->
     </div>
 
     <br>

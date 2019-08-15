@@ -40,10 +40,10 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
     var frequency = $("#frequency-input").val().trim();
 
     var newTrain = {
-        trainName: trainName,
-        destination: destination,
-        firstTrainTime: firstTrainTime,
-        frequency: frequency,
+        name: trainName,
+        dest: destination,
+        firstTrain: firstTrainTime,
+        freq: frequency,
         // nextArrival: nextArrival,
         // minutesAway: minutesAway,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
@@ -51,10 +51,10 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
 
     dataRef.ref().push(newTrain);
 
-    console.log(newTrain.trainName);
-    console.log(newTrain.destination);
-    console.log(newTrain.firstTrainTime);
-    console.log(newTrain.frequency);
+    console.log(newTrain.name);
+    console.log(newTrain.dest);
+    console.log(newTrain.firstTrain);
+    console.log(newTrain.freq);
 
     alert("New train successfully added");
 
@@ -67,22 +67,43 @@ $(document).ready(function () { // ALWAYS INCLUDE!!
 
   });
 
-  
-  /* database.ref().on("child_added", function(childSnapshot) {
+  // When new data is added to Firebase....
+
+  dataRef.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
 
-    var trainName = childSnapshot.val().trainName;
-    var destination = childSnapshot.val().destination;
-    var firstTrainTime = childSnapshot.val().firstTrainTime;
-    var frequency = childSnapshot.val().frequency;
+    var trainName = childSnapshot.val().name;
+    var destination = childSnapshot.val().dest;
+    var firstTrainTime = childSnapshot.val().firstTrain;
+    var frequency = childSnapshot.val().freq;
 
+    console.log(childSnapshot.val().name);
+    console.log(childSnapshot.val().dest);
+    console.log(childSnapshot.val().firstTrain);
+    console.log(childSnapshot.val().freq);
+
+    /* var trainName = childSnapshot.val().name;
+    var destination = childSnapshot.val().dest;
+    var firstTrainTime = childSnapshot.val().firstTrain;
+    var frequency = childSnapshot.val().freq;
+ */
     console.log(trainName);
     console.log(destination);
     console.log(firstTrainTime);
     console.log(frequency);
 
+    // Create html elements to hold new Firebase data
+    var newRow = $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(destination),
+      $("<td>").text(firstTrainTime),
+      $("<td>").text(frequency)
+    );
+
+    $("#train-table > tbody").append(newRow);
 
 
-  }); */
+
+  }); 
 
 });
