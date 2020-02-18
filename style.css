@@ -7,6 +7,13 @@
     margin-right: -12px;
 }
 
+img {
+    height: 130px;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
 #schedule-table {
     border-color: black;
     border-width: 1px;
