@@ -1,3 +1,5 @@
+
+
 .jumbotron {
     background-color: black;
     color: white;
@@ -7,11 +9,15 @@
     margin-right: -12px;
 }
 
-img {
-    height: 130px;
+.train_pic {
+    height: 150px;
     padding: 0px;
     margin: 0px;
     float: left;
+}
+
+.logo {
+    width: 130px;
 }
 
 #schedule-table {
